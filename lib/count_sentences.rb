@@ -29,13 +29,14 @@ class String
   def count_sentences
 
     count = 0
-    self.split(" ").each do |w|
-      if w.end_with?("?") || w.end_with?(".") || w.end_with?("!")
+    array = self.split(" ")
+    array.each do |word|
+      if word.sentence?|| word.question? || word.exclamation?
         count += 1
       end
     end
     count
-    
+
   end
 
 end
